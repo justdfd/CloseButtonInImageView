@@ -47,12 +47,8 @@ class ViewController: UIViewController {
         btnTrailing = button.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -10)
         btnTrailing.isActive = true
 
-        //button.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
-        //button.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
-
     }
     override func viewDidLayoutSubviews() {
-        //print(imageView.frame)
         repositionCloseButton()
     }
     func repositionCloseButton() {
@@ -65,14 +61,8 @@ class ViewController: UIViewController {
             // image fills view along height, calculate X constant
             imageFrame.origin.x = (imageView.frame.width - scaledSize.width) / 2
         }
-        //btnTop.constant = imageFrame.width - 30
         btnTop.constant = imageFrame.origin.y + 10
         btnTrailing.constant = ((imageView.frame.width - imageFrame.width - imageFrame.origin.x) * -1) - 10
-        print(imageView.frame)
-        print(imageFrame)
-        print(btnTrailing.constant)
-        //origin.x == 200
-        //imageview.widt == 300
     }
 }
 extension UIImageView {
@@ -125,4 +115,3 @@ extension UIImageView {
         return CGSize(width: image.size.width * factor, height: image.size.height * factor)
     }
 }
-
